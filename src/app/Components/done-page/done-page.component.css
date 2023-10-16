@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Great+Vibes&family=Lato:wght@900&family=Montserrat:wght@700&family=Poppins:wght@300&family=Work+Sans:wght@200;300;400;600;800&display=swap');
+
+.m-auto {
+    margin: auto;
+    display: block;
+}
+
+.hh {
+    font-family: 'Alfa Slab One', serif;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 150px !important;
+    font-weight: bolder !important;
+
+}

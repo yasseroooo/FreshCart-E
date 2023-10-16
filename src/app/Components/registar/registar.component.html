@@ -1,0 +1,61 @@
+<h1 >registar Now</h1>
+<form [formGroup]="registerForm" (ngSubmit)="registor(registerForm)"> <!--property binding عشان يروح يجيب من التايب سكريبت القيمة-->
+  <!-- ngsubmet used insted of put the function register inside button and take all value of registerForm to valid before submit -->
+  <div class="mb-1">
+    <label for="exampleFormControlInput1" class="form-label">Name</label>
+    <input formControlName="name" type="text" class="form-control" id="exampleFormControlInput1" >
+    <div *ngIf="registerForm.controls['name'].touched && registerForm.controls['name'].errors  " class="alert alert-danger ">
+      <p *ngIf="registerForm.controls['name'].getError('required')">user name is required </p>
+      <p  *ngIf="registerForm.controls['name'].getError('pattern')"> user name must start with uppercase</p>
+      <p *ngIf="registerForm.controls['name'].getError('minlength')">min length is 3 </p>
+      <p *ngIf="registerForm.controls['name'].getError('maxlength')">max length is 20 </p>
+    </div>
+  </div>
+<div class="mb-1">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input formControlName="email" type="email" class="form-control" id="exampleFormControlInput2" >
+    <div *ngIf="registerForm.controls['email'].errors && registerForm.controls['email'].touched" class="alert alert-danger ">
+      <p *ngIf="registerForm.controls['email'].getError('required')">email is required</p>
+      <p *ngIf="registerForm.controls['email'].getError('email')">wrong email</p>
+    </div>
+  </div>
+<div class="mb-1">
+    <label for="exampleFormControlInput1" class="form-label">Password</label>
+    <input formControlName="password" type="password" class="form-control" id="exampleFormControlInput3" >
+    <div *ngIf="registerForm.controls['password'].errors && registerForm.controls['password'].touched" class="alert alert-danger ">
+      <p *ngIf="registerForm.controls['password'].getError('required')">Password is required</p>
+      <p *ngIf="registerForm.controls['password'].getError('pattern')">min 8 char and 1 special characters at least one letter and one number </p>
+    </div>
+  </div>
+<!-- <div class="mb-1">
+    <label for="exampleFormControlInput1" class="form-label">rePassword</label>
+    <input formControlName="rePassword" type="password" class="form-control" id="exampleFormControlInput3" >
+    <div *ngIf="(registerForm.controls['rePassword'].errors && registerForm.controls['rePassword'].touched && registerForm.controls['rePassword'].value ) 
+    || (registerForm.controls['rePassword'].value!=registerForm.controls['password'].value) && (registerForm.controls['rePassword'].touched)" class="alert alert-danger">
+      <p *ngIf="registerForm.controls['rePassword'].getError('pattern')">password is not matched</p>
+    </div>
+  </div> -->
+  <!-- =================another solution for rePassword ================= -->
+<div class="mb-1">
+    <label for="exampleFormControlInput1" class="form-label">rePassword</label>
+    <input formControlName="rePassword" type="password" class="form-control" id="exampleFormControlInput3" >
+    <div *ngIf="registerForm.controls['rePassword'].touched && !matching(registerForm.controls['rePassword'].value , registerForm.controls['password'].value)" 
+    class="alert alert-danger">
+      <p>password is not matched</p>
+    </div>
+  </div>
+<div class="mb-1">
+    <label for="exampleFormControlInput1" class="form-label">phone</label>
+    <input formControlName="phone" type="tel" class="form-control" id="exampleFormControlInput3" >
+    <div *ngIf="registerForm.controls['phone'].errors && registerForm.controls['phone'].touched" class="alert alert-danger">
+      <p *ngIf="registerForm.controls['phone'].getError('required')">phone number is required</p>
+      <p *ngIf="registerForm.controls['phone'].getError('pattern')">wrong phone number</p>
+    </div>
+  </div>
+  <p *ngIf="ErrorMassege" class="alert alert-danger">{{ErrorMassege}}</p>
+  <button *ngIf="!isLoading" [disabled]="!registerForm.valid" type="submit" class="btn bg-main text-white ms-auto d-block" style="display: block !important;">Register</button>
+  <button *ngIf="isLoading" type="button" class="btn bg-main text-white ms-auto d-block" style="display: block !important;" claa ><i class="fas fa-spinner fa-spin"></i></button>
+  <!-- ms-auto >>leave the start and go to end on the right -->
+  <!-- isLoading >> i want prevent send request more than one time  -->
+  <!-- [disabled]="!registerForm.valid" >> disabled the button untill the form is correct   -->
+</form>

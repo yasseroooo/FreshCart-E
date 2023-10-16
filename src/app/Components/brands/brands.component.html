@@ -1,0 +1,9 @@
+<h1>Select between a wide range of Brands </h1>
+<div class="row  over-flow-hedden">
+    <div routerLink="/brands/{{item._id}}" (click)="getSpicificCategory(item._id)"
+        class="col-md-3  shadow m-3 p-2 tt " style="border: 4px solid mediumseagreen; border-radius: 10px;"
+        *ngFor="let item of brandes">
+        <img height="200px" class="w-100 border" [src]="item.image" alt="">
+        <h6 class="text-center bg-main rr">{{item.name}}</h6>
+    </div>
+</div>

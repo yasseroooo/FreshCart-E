@@ -1,0 +1,32 @@
+<div class="row border shadow m-3 rounded p-2" *ngFor="let product of WishListAray; let i=index">
+    <div class="col-md-2"><img class="w-75" [src]="product.imageCover" alt=""></div>
+    <div class="col-md-10">
+
+        <div class="d-flex justify-content-between mb-0">
+            <div class="d-flex justify-content-between">
+                <span>
+                    <h3 class="p-0 fw-bolder">{{product.title |seeMore:2}}</h3>
+                </span>
+                <h5 class="px-4 pt-1">{{product.ratingsAverage}} <i class="fa-solid fa-star rating-color"></i>
+                </h5>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-between">
+            <h6 class="p-0 text-main">{{product.category.name |seeMore:3}}</h6>
+            <span><button (click)="removeProductFromWishList(product._id,i)" class="btn mb-2 text-danger btnHover"><i
+                        class="fas fa-trash"></i> remove from wish list</button></span>
+        </div>
+        <div class="d-flex justify-content-between">
+            <span class="fw-bolder">{{product.price | currency: 'EGP'}}</span>
+            <span><button (click)="addProductToCart(product._id)" class="btn mb-2 text-main addProductbtn"><i
+                class="fas fa-sad"></i> Add to Cart</button></span>
+        </div>
+    </div>
+</div>
+
+<h3 *ngIf="WishListAray.length===0 && !isLoading" class="alert alert-danger text-center w-50 p-4 rounded m-auto shadow  "> your Wish List is empty</h3>
+<button *ngIf="WishListAray.length===0 && !isLoading" routerLink="/home" class="text-white fw-bolder mt-3 btn bg-main w-100"> Go to
+    home</button>
+
+

@@ -1,0 +1,14 @@
+<div class="p-5">
+  <h2>shop populer Categories</h2>
+  <owl-carousel-o class="cursor-pointer" [options]="customOptions">
+
+    <ng-container *ngFor="let img of images">
+      <ng-template  (click)="getSpicificCategory(img._id)" carouselSlide
+        [id]="img.id">
+        <img routerLink="/Categories/{{img._id}}" height="200" class="w-100" [src]="img.image" [alt]="img.name">
+        <h6 class="text-center">{{img.name}}</h6>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+</div>

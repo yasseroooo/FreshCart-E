@@ -1,0 +1,17 @@
+.rr{
+    font-weight: bolder;
+    color: white;
+    padding: 5px 0px;
+}
+.row {
+    margin-left: 100px;
+}
+.tt{
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+.tt:hover{
+    transform: scale(1.1);
+    border: 4px solid mediumseagreen !important;
+    border-radius: 10px;  
+}

@@ -1,0 +1,134 @@
+/* .navo ul li {
+    list-style: none;
+    cursor: pointer;
+
+}
+ul li{
+    cursor: pointer;
+}
+.badge{
+    position: relative;
+    padding: 5px 5px;
+    top: -5px;
+    right: 0;
+}
+.navi li{
+    padding-left: 10px;
+}
+
+
+.container-fluid button{
+    z-index: 555;
+    color: black;
+}
+.dropdown{
+    overflow: visible;
+    z-index: 5555;
+}
+
+.container ul li {
+    
+    list-style: none;
+    font-weight: 700;
+    font-size: medium;
+    margin-left: 30px;
+    cursor: pointer;
+
+}
+
+
+
+
+
+.container h1 {
+    cursor: pointer;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+ */
+
+.badge {
+    bottom: 13px;
+    left: 15px;
+}
+
+.active {
+    border-radius: 10%;
+    background-color: rgba(16, 204, 51, 0.8);
+    color: white !important;
+    padding: 10px;
+
+
+}
+
+.collapse ul li a {
+    color: black;
+    transition: all .3s;
+}
+
+.collapse ul li a:hover {
+    color: rgb(20, 171, 9) !important;
+}
+
+.container ul li a:hover {
+    text-decoration-line: none;
+}
+
+
+/* =================================== */
+/* Dropdown Button */
+.dropbtn1 {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+   padding-top: 10px;
+    font-size: 20px;
+    border: none;
+    transition: all 2s;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown1 {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content1 {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    padding: 12px 20px;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: background-color 0.2s ease-in-out;  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content1 a {
+    color: black;
+    
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown1:hover .dropdown-content1 {background-color: rgb(103, 191, 191);}
+  /* Show the dropdown menu on hover */
+  .dropdown1:hover .dropdown-content1 {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+/* Dropdown Content (Hidden by Default) */
+
+.dd{
+    padding-top: 10px;
+   background-color: aliceblue;
+    transition: all 1s;
+}
+
+
+

@@ -1,0 +1,11 @@
+.h3{
+    transition: all 0.5s;
+}
+
+.h3:hover{
+    color: #e70505;
+    overflow: hidden;
+}
+.gg{
+    color: #e70505;
+}

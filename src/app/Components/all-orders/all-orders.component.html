@@ -1,0 +1,16 @@
+<div class="row  over-flow-hedden">
+    <div class="col-md-9  shadow m-3 p-2 tt " style="border: 4px solid mediumseagreen; border-radius: 10px;"
+        *ngFor="let order of allOrders">
+        <p>Delivary status: <span>{{order.isDelivered}}</span></p>
+        <p>paid: <span>{{order.isPaid}}</span></p>
+        <p>payment Method Type: <span>{{order.paymentMethodType}}</span></p>
+        <p>shipping Address: <span>{{order.shippingAddress.city}}</span></p>
+        <p>shipping Address details: <span>{{order.shippingAddress.details}}</span></p>
+        <p>phone number: <span>{{order.shippingAddress.phone}}</span></p>
+        <p>total Order Price: <span>{{order.totalOrderPrice |currency:'EGP '}} </span></p>
+        
+        <div *ngFor="let order of allOrders">
+            
+        </div>
+    </div>
+</div>

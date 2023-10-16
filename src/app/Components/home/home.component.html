@@ -1,0 +1,10 @@
+<app-carousel-home></app-carousel-home>
+<app-carsoul-category></app-carsoul-category>
+<input class="form-control mb-3 mt-5 " placeholder="Search...." [(ngModel)]="searchTearm" type="text" name="" id="">
+<!-- اي حاجة هتتكتب في الانبوت هتتخزن في السيرش تيرم-->
+<div class="row">
+    
+    <div class="col-md-4" *ngFor="let product of products |search:searchTearm">
+        <app-product [product]="product"></app-product>
+    </div>
+</div>

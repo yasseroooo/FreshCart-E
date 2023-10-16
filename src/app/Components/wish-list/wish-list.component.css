@@ -1,0 +1,36 @@
+.btnHover:hover {
+    background-color: rgb(177, 47, 47);
+    color: white !important;
+}
+
+.h5,
+.h6 {
+    width: fit-content !important;
+    margin-left: auto;
+    display: block;
+    transition: all 0.5s;
+}
+
+.h5:hover {
+    background-color: var(--main-color);
+    border: 5px;
+    border-radius: 5px;
+    box-shadow: 5px solid white;
+    transition: all 0.5s;
+
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+.addProductbtn {
+    border: 2px solid var(--main-color);
+    color: rgb(0, 0, 0);
+    transition: all 0.5s;
+}
+
+.addProductbtn:hover {
+    background-color: var(--main-color);
+    color: white;
+}

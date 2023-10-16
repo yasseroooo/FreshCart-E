@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<div class="container mt-5 pt-5 mb-4 pb-2">
+    <router-outlet></router-outlet>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="line-spin-fade" [fullScreen]="true">
+        <p style="color: white"> Wait a second... </p>
+    </ngx-spinner>
+</div>
+<app-footer></app-footer>

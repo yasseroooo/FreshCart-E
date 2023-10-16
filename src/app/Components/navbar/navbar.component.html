@@ -1,0 +1,67 @@
+
+<nav   class="navbar fixed-top navbar-expand-lg navbar-light   ">
+    <div #nav class="container">
+        <a class="navbar-brand" routerLink="home">
+            <img src="assets/images/freshcart-logo.svg" alt="">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div  class="collapse navbar-collapse align-items-center" id="navbarTogglerDemo02">
+            <ul  *ngIf="navBar_Ask_IsUser_LoggedIn" class="navbar-nav me-auto   mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="cart" routerLinkActive="active">Cart</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="allorders" routerLinkActive="active">All Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="wishList" routerLinkActive="active">Wish List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="products" routerLinkActive="active">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Categories" routerLinkActive="active">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="brands" routerLinkActive="active">Brands</a>
+                </li>
+                <div class="dropdown1">
+                    <button class="dropbtn1">Setting</button>
+                    <div class="dropdown-content1">
+                        <a routerLink="Forgetpassword" >Forget Password</a>
+                    </div>
+                </div>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <span *ngIf="navBar_Ask_IsUser_LoggedIn" routerLink="cart"
+                        class="position-relative cursor-pointer">
+                        <i class="fas fa-cart-shopping text-main mx-2 fa-1x"></i>
+                        <span class="bg-main text-white badge position-absolute ">{{CartCount}}</span>
+                    </span>
+                </li>
+            </ul>
+            <ul class="cursor-pointer d-flex list-unstyled mt-3">
+                <li *ngIf="!navBar_Ask_IsUser_LoggedIn" class="mx-2">
+                    <a routerLink="register" routerLinkActive="active" style="color: black; list-style: none;">Register</a>
+                </li>
+                <li *ngIf="!navBar_Ask_IsUser_LoggedIn" class="mx-2">
+                    <a routerLink="login" routerLinkActive="active" style="color: black; list-style: none;">Login</a>
+                </li>
+                <li *ngIf="navBar_Ask_IsUser_LoggedIn" (click)="logout()" class="mx-2">
+                    <a>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+

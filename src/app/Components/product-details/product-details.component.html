@@ -1,0 +1,31 @@
+<div class="row py-5">
+    <div class="col-md-3">
+        <div>
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-container *ngFor="let img of productDetails?.images ">
+                  <ng-template carouselSlide [id]="img">
+                    <img [src]="img" >
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            
+          </div>
+    </div>
+    <div class="col-md-9">
+        <h1>{{productDetails?.title}} </h1> <!--mean if the response not came back from api dont show this until it came-->  
+        <p class="text-muted">{{(productDetails?.description|| "") |seeMore:20}}</p>
+        <h5 class="text-main">{{productDetails?.category?.name ?? 'N/A'}}</h5>
+        <div class="d-flex  justify-content-between">
+            <h4>{{productDetails?.price}}+EGP</h4>
+            <h4> <i class="fa-solid fa-star rating-color"></i> {{productDetails?.ratingsAverage }} </h4>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button (click)="addProductToCard(productId)" class="btn bg-main text-white w-75">+ add to cart</button>
+        <i *ngIf="!sucAdd" (click)="AddProductToWishlist()" class="fa-regular fa-heart h3"></i>
+        <i  *ngIf="sucAdd" (click)="AddProductToWishlist()" class="fa-solid fa-heart h3 gg"></i>
+        </div>
+
+
+    </div>
+</div>
